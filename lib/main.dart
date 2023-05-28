@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home/home.dart';
+import 'package:flutter_money_management/screens/home/screen_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: ScreenHome(),
     );
   }
 }
