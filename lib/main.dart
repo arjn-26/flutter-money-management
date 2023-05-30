@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_money_management/models/category/category_model.dart';
 import 'package:flutter_money_management/screens/home/screen_home.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+
+  //  if (!Hive.isAdapterRegistered(CatrgoryTypeAdapter().typeId)) {
+  //   Hive.registerAdapter(CatrgoryTypeAdapter());
+  // }
+
+  if (!Hive.isAdapterRegistered(CategoryModelAdapter().typeId)) {
+    Hive.registerAdapter(CategoryModelAdapter());
+  }
+  // if (!Hive.isAdapterRegistered(TransationModelAdapter().typeId)) {
+  //   Hive.registerAdapter(TransationModelAdapter());
+  // }
   runApp(const MyApp());
 }
 
