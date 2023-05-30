@@ -31,5 +31,10 @@ class CategoryModel {
     required this.type,
     this.isDeleted = false,
   });
+
+  @override
+  String toString() {
+    return '{$name  $type}';
+  }
 }
 //flutter packages pub run build_runner watch --use-polling-watcher --delete-conflicting-outputs
